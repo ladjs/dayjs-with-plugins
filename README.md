@@ -16,6 +16,7 @@
 * [Install](#install)
 * [Usage](#usage)
   * [Node](#node)
+  * [Browser](#browser)
 * [Contributors](#contributors)
 * [License](#license)
 
@@ -44,6 +45,8 @@ const dayjs = require('dayjs-with-plugins');
 
 console.log('M/D/YY', dayjs().format('M/D/YY'));
 ```
+
+### Browser
 
 #### VanillaJS
 
