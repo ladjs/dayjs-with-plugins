@@ -1,0 +1,24 @@
+{
+  "extends": ["eslint:recommended"],
+  "env": {
+    "node": false,
+    "browser": true,
+    "amd": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "plugins": ["compat"],
+  "rules": {
+    "compat/compat": "error",
+    "no-func-assign": "off",
+    "no-unused-vars": "off",
+    "no-empty": "off"
+  },
+  "settings": {
+    "polyfills": [
+      "Array.from",
+      "Symbol.iterator",
+      "Symbol.prototype"
+    ]
+  }
+}

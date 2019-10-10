@@ -15,6 +15,7 @@
 
 * [Install](#install)
 * [Usage](#usage)
+  * [Node](#node)
 * [Contributors](#contributors)
 * [License](#license)
 
@@ -36,11 +37,45 @@ yarn add dayjs dayjs-with-plugins
 
 ## Usage
 
+### Node
+
 ```js
 const dayjs = require('dayjs-with-plugins');
 
-// ...
+console.log('M/D/YY', dayjs().format('M/D/YY'));
 ```
+
+#### VanillaJS
+
+This is the solution for you if you're just using `<script>` tags everywhere!
+
+```html
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6,es7,Array.from,Symbol.iterator,Symbol.prototype"></script>
+<script src="https://unpkg.com/dayjs-with-plugins"></script>
+<script type="text/javascript">
+  (function() {
+    console.log('M/D/YY', dayjs().format('M/D/YY'));
+  })();
+</script>
+```
+
+##### Required Browser Features
+
+We recommend using <https://polyfill.io> (specifically with the bundle mentioned in [VanillaJS](#vanillajs) above):
+
+```html
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6,es7,Array.from,Symbol.iterator,Symbol.prototype"></script>
+```
+
+* Array.from() is not supported in IE 11
+* Symbol.iterator() is not supported in IE 11
+* Symbol.prototype() is not supported in IE 11
+
+#### Bundler
+
+This assumes you are using [browserify][], [webpack][], [rollup][], or another bundler.
+
+See [Node](#node) usage above for how to use in a bundler environment.
 
 
 ## Contributors
@@ -60,3 +95,9 @@ const dayjs = require('dayjs-with-plugins');
 [npm]: https://www.npmjs.com/
 
 [yarn]: https://yarnpkg.com/
+
+[browserify]: https://github.com/browserify/browserify
+
+[webpack]: https://github.com/webpack/webpack
+
+[rollup]: https://github.com/rollup/rollup
