@@ -23,6 +23,6 @@ const dom = new JSDOM(``, {
 
 dom.runVMScript(script);
 
-test('should expose dayjs global funciton', t => {
+test('should expose dayjs global function', (t) => {
   t.true(typeof dom.window.dayjs === 'function');
 });

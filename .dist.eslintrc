@@ -17,8 +17,8 @@
   "settings": {
     "polyfills": [
       "Array.from",
-      "Symbol.iterator",
-      "Symbol.prototype"
+      "Symbol",
+      "console"
     ]
   }
 }

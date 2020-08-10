@@ -34,7 +34,7 @@ const debug = require('debug')('dayjs-with-plugins');
   'weekOfYear',
   'weekYear',
   'weekday'
-].forEach(pluginName => {
+].forEach((pluginName) => {
   try {
     const plugin = require(`dayjs/plugin/${pluginName}`);
     dayjs.extend(plugin);
