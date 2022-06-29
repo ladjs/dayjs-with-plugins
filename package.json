@@ -4,7 +4,7 @@
   "version": "0.0.4",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
-    "url": "https://github.com/niftylettuce/dayjs-with-plugins/issues",
+    "url": "https://github.com/ladjs/dayjs-with-plugins/issues",
     "email": "niftylettuce@gmail.com"
   },
   "contributors": [
@@ -44,7 +44,7 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/niftylettuce/dayjs-with-plugins",
+  "homepage": "https://github.com/ladjs/dayjs-with-plugins",
   "jsdelivr": "dist/dayjs-with-plugins.min.js",
   "keywords": [
     "all",
