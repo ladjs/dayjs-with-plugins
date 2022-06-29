@@ -10,15 +10,15 @@
   "plugins": ["compat"],
   "rules": {
     "compat/compat": "error",
-    "no-func-assign": "off",
     "no-unused-vars": "off",
-    "no-empty": "off"
+    "no-undef": "off",
+    "no-empty": "off",
+    "no-redeclare": "off",
+    "no-control-regex": "off"
   },
   "settings": {
     "polyfills": [
-      "Array.from",
-      "Symbol",
-      "console"
+      "Promise"
     ]
   }
 }

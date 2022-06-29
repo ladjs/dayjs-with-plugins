@@ -1,67 +1,50 @@
 {
   "name": "dayjs-with-plugins",
-  "description": "Day.js with all plugins added out of the box, no need to use dayjs.extend!",
+  "description": "Day.js with all plugins and locales added out of the box, no need to use dayjs.extend nor dayjs.locale!",
   "version": "0.0.4",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
-  "ava": {
-    "verbose": true
-  },
   "bugs": {
     "url": "https://github.com/niftylettuce/dayjs-with-plugins/issues",
     "email": "niftylettuce@gmail.com"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "contributors": [
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
   ],
-  "dependencies": {
-    "debug": "^4.1.1"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@ladjs/browserslist-config": "^0.0.1",
-    "ava": "latest",
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@ladjs/browserslist-config": "^1.0.0",
+    "ava": "^4.3.0",
     "babelify": "^10.0.0",
-    "browserify": "^16.5.2",
-    "codecov": "latest",
-    "cross-env": "^7.0.2",
-    "dayjs": "^1.8.33",
-    "eslint": "^7.6.0",
-    "eslint-config-xo-lass": "^1.0.3",
-    "eslint-plugin-compat": "^3.8.0",
+    "browserify": "^17.0.0",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.3",
+    "eslint": "^8.18.0",
+    "eslint-config-xo-lass": "^2.0.1",
+    "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-node": "^11.1.0",
-    "fixpack": "latest",
-    "husky": "latest",
+    "fixpack": "^4.0.0",
+    "husky": "^8.0.1",
     "jsdom": "15",
-    "lint-staged": "latest",
-    "nyc": "latest",
-    "remark-cli": "latest",
-    "remark-preset-github": "latest",
-    "tinyify": "^3.0.0",
-    "xo": "latest"
+    "lint-staged": "^13.0.3",
+    "nyc": "^15.1.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-github": "^4.0.4",
+    "rimraf": "^3.0.2",
+    "tinyify": "^3.1.0",
+    "xo": "^0.50.0"
   },
   "engines": {
-    "node": ">=6.4.0"
+    "node": ">=14"
   },
   "files": [
     "lib",
     "dist"
   ],
   "homepage": "https://github.com/niftylettuce/dayjs-with-plugins",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "jsdelivr": "dist/dayjs-with-plugins.min.js",
   "keywords": [
     "all",
@@ -81,58 +64,25 @@
     "replacement"
   ],
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "xo --fix",
-      "git add"
-    ],
-    "*.md": [
-      "remark . -qfo",
-      "git add"
-    ],
-    "package.json": [
-      "fixpack",
-      "git add"
-    ]
-  },
   "main": "lib/index.js",
   "peerDependencies": {
     "dayjs": "*"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "none"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "preset-github"
-    ]
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/niftylettuce/dayjs-with-plugins"
   },
   "scripts": {
-    "ava": "cross-env NODE_ENV=test ava",
     "browserify": "browserify src/index.js -o dist/dayjs-with-plugins.js -s dayjs -g [ babelify --configFile ./.dist.babelrc ]",
     "build": "npm run build:clean && npm run build:lib && npm run build:dist",
     "build:clean": "rimraf lib dist",
     "build:dist": "npm run browserify && npm run minify",
     "build:lib": "babel --config-file ./.lib.babelrc src --out-dir lib",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo && eslint -c .lib.eslintrc lib && eslint --no-inline-config -c .dist.eslintrc dist",
+    "lint": "xo --fix && remark . -qfo && fixpack && eslint -c .lib.eslintrc lib && eslint --no-inline-config -c .dist.eslintrc dist",
     "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/dayjs-with-plugins.min.js -s dayjs -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
-    "nyc": "cross-env NODE_ENV=test nyc ava",
-    "test": "npm run build && npm run lint && npm run ava",
-    "test-coverage": "npm run build && npm run lint && npm run nyc"
+    "prepare": "husky install",
+    "pretest": "npm run build && npm run lint",
+    "test": "cross-env NODE_ENV=test nyc ava"
   },
-  "unpkg": "dist/dayjs-with-plugins.min.js",
-  "xo": {
-    "prettier": true,
-    "space": true,
-    "extends": [
-      "xo-lass"
-    ]
-  }
+  "unpkg": "dist/dayjs-with-plugins.min.js"
 }
