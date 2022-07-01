@@ -16,7 +16,6 @@
     "@babel/preset-env": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@ladjs/browserslist-config": "^1.0.0",
     "ava": "^4.3.0",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",

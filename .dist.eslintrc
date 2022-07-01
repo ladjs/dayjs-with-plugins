@@ -14,7 +14,8 @@
     "no-undef": "off",
     "no-empty": "off",
     "no-redeclare": "off",
-    "no-control-regex": "off"
+    "no-control-regex": "off",
+    "no-useless-escape": "off"
   },
   "settings": {
     "polyfills": [

@@ -1,1 +1,1 @@
-extends @ladjs/browserslist-config
+defaults, not ie 11
