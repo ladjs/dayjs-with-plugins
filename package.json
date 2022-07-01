@@ -69,7 +69,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/niftylettuce/dayjs-with-plugins"
+    "url": "https://github.com/ladjs/dayjs-with-plugins"
   },
   "scripts": {
     "browserify": "browserify src/index.js -o dist/dayjs-with-plugins.js -s dayjs -g [ babelify --configFile ./.dist.babelrc ]",
