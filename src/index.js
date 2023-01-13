@@ -2,7 +2,8 @@ const dayjs = require('dayjs');
 
 dayjs.extend(require('dayjs/plugin/advancedFormat'));
 dayjs.extend(require('dayjs/plugin/arraySupport'));
-dayjs.extend(require('dayjs/plugin/badMutable'));
+// NOTE: this was a bug, do not uncomment
+// dayjs.extend(require('dayjs/plugin/badMutable'));
 dayjs.extend(require('dayjs/plugin/buddhistEra'));
 dayjs.extend(require('dayjs/plugin/calendar'));
 dayjs.extend(require('dayjs/plugin/customParseFormat'));
