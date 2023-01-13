@@ -1,7 +1,7 @@
 {
   "name": "dayjs-with-plugins",
   "description": "Day.js with all plugins and locales added out of the box, no need to use dayjs.extend nor dayjs.locale!",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
     "url": "https://github.com/ladjs/dayjs-with-plugins/issues",
